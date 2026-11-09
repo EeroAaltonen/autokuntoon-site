@@ -195,6 +195,12 @@ def page(path, title, desc, body, schemas=()):
             <li><a href="{IG}" rel="noopener">Instagram</a></li>
             <li><a href="{TT}" rel="noopener">TikTok</a></li>
           </ul>
+          <h2 style="margin-top:16px">Toiminta-alue</h2>
+          <ul>
+            <li><a href="/alueet/auton-sisapesu-turku/">Turku</a> · <a href="/alueet/auton-sisapesu-kaarina/">Kaarina</a> · <a href="/alueet/auton-sisapesu-raisio/">Raisio</a></li>
+            <li><a href="/alueet/auton-sisapesu-naantali/">Naantali</a> · <a href="/alueet/auton-sisapesu-lieto/">Lieto</a></li>
+            <li><a href="/alueet/auton-sisapesu-rusko/">Rusko</a> · <a href="/alueet/auton-sisapesu-masku/">Masku</a> · <a href="/alueet/">Kaikki alueet</a></li>
+          </ul>
           <h2 style="margin-top:16px">Oppaat</h2>
           <ul>
             <li><a href="/oppaat/auton-sisapesun-hinta-turku/">Auton sisäpesun hinta Turussa</a></li>
@@ -333,7 +339,7 @@ home = f"""    <section class="hero">
         </div>
         <div>
           <h2>Missä toimimme</h2>
-          <p>Meillä ei ole kiinteää toimipistettä, vaan tulemme sinun luoksesi. Toimimme pääasiassa Turussa sekä lähikunnissa, kuten Kaarinassa, Raisiossa, Naantalissa, Liedossa, Ruskolla, Maskussa ja Paimiossa.</p>
+          <p>Meillä ei ole kiinteää toimipistettä, vaan tulemme sinun luoksesi. Toimimme pääasiassa <a href="/alueet/auton-sisapesu-turku/">Turussa</a> sekä lähikunnissa, kuten <a href="/alueet/auton-sisapesu-kaarina/">Kaarinassa</a>, <a href="/alueet/auton-sisapesu-raisio/">Raisiossa</a>, <a href="/alueet/auton-sisapesu-naantali/">Naantalissa</a>, <a href="/alueet/auton-sisapesu-lieto/">Liedossa</a>, <a href="/alueet/auton-sisapesu-rusko/">Ruskolla</a>, <a href="/alueet/auton-sisapesu-masku/">Maskussa</a> ja Paimiossa. <a href="/alueet/">Katso koko toiminta-alue</a>.</p>
           <p>Yli 15 kilometrin päähän Turun keskustasta lisäämme pienen polttoainemaksun, josta sovitaan etukäteen.</p>
         </div>
       </div>
@@ -679,6 +685,188 @@ PAGES = [
     (ART2_PATH, "Auton sisäpesu ennen myyntiä – muistilista ja hinnat | Autokuntoon.fi",
      "Myymässä autoa? Puhdas sisätila parantaa ensivaikutelmaa ja myynti-ilmoituksen kuvia. Muistilista ennen myyntiä ja Deluxe-pesu kotipihalla Turussa 125 €.",
      article2, [article_schema(ART2_PATH, ART2_TITLE, ART2_DATE), breadcrumb_schema([("Etusivu", "/"), ("Auton sisäpesu ennen myyntiä", ART2_PATH)])]),
+]
+
+# ---------- Paikkakuntasivut ----------
+# (slug, nimi, inessiivi, genetiivi, illatiivi, johdanto, alueet, matka, oma vinkki)
+CITIES = [
+    ("turku", "Turku", "Turussa", "Turun", "Turkuun",
+     "Autokuntoon.fi on turkulainen yritys, ja Turku on kotialueemme. Tulemme pesemään autosi sisältä kotipihallesi, työpaikan parkkipaikalle tai taloyhtiön pihaan, joten sinun ei tarvitse ajaa pesulaan eikä odotella.",
+     ["Keskusta", "Hirvensalo", "Runosmäki", "Varissuo", "Nummi", "Uittamo", "Skanssi", "Ilpoinen", "Härkämäki", "Moikoinen"],
+     "Turussa matka sisältyy hintaan. Polttoainemaksu lisätään vain, jos osoite on yli 15 kilometrin päässä Turun keskustasta, esimerkiksi osassa saaristoa. Siitä sovitaan aina etukäteen.",
+     "Kerrostalossa asuvan kannattaa varmistaa, että pihalla tai autokatoksessa on sähköpistoke. Usein lämmitystolpan pistoke riittää."),
+    ("kaarina", "Kaarina", "Kaarinassa", "Kaarinan", "Kaarinaan",
+     "Kaarina rajautuu Turkuun, joten se kuuluu lähialueeseemme. Pesemme auton sisältä suoraan kotipihallasi, eikä autoa tarvitse viedä minnekään.",
+     ["Keskusta", "Littoinen", "Kuusisto", "Hovirinta", "Rauvola", "Piikkiö"],
+     "Kaarinan keskustaan, Littoisiin ja Kuusistoon tulemme ilman lisämaksua. Piikkiön suunnalla matka voi ylittää 15 kilometriä Turun keskustasta, jolloin lisätään pieni polttoainemaksu. Kerromme sen etukäteen.",
+     "Omakotitalon pihalla pesu on helppo järjestää: tarvitsemme vain sähköpistokkeen ja tilaa avata auton ovet."),
+    ("raisio", "Raisio", "Raisiossa", "Raision", "Raisioon",
+     "Raisio on vain lyhyen ajomatkan päässä Turusta, joten tulemme sinne usein. Auton sisäpesu tehdään kotipihallasi, ja voit tehdä sillä aikaa muuta.",
+     ["Keskusta", "Kaanaa", "Ihala", "Kerttula", "Vaisaari", "Kuloinen"],
+     "Raision keskusta on noin 10 kilometrin päässä Turun keskustasta, joten matka sisältyy hintaan koko Raisiossa.",
+     "Jos auto on päivän töissä, pesu voidaan sopia myös iltaan, kun auto on taas kotipihassa."),
+    ("naantali", "Naantali", "Naantalissa", "Naantalin", "Naantaliin",
+     "Tulemme Naantaliin pesemään auton sisältä kotipihallesi tai vaikka kesämökille. Riittää, että auton lähellä on sähköpistoke.",
+     ["Keskusta", "Luonnonmaa", "Karvetti", "Rymättylä", "Merimasku", "Velkua"],
+     "Naantalin keskusta on noin 15 kilometrin päässä Turun keskustasta, joten polttoainemaksu riippuu tarkasta osoitteesta. Rymättylään, Merimaskuun ja Velkualle lisätään aina polttoainemaksu. Kerromme summan ennen kuin varaus vahvistetaan.",
+     "Kesämökillä pesu onnistuu, kunhan sähköä on saatavilla. Kerro varatessasi, jos perille on hankala löytää."),
+    ("lieto", "Lieto", "Liedossa", "Liedon", "Lietoon",
+     "Tulemme Lietoon pesemään auton sisältä kotipihallasi. Pesu sopii arkiautolle, lapsiperheen autolle tai ennen auton myyntiä.",
+     ["Kirkonkylä", "Ilmarinen", "Avantti", "Loukinainen", "Littoinen", "Tarvasjoki"],
+     "Ilmarinen, Avantti ja Liedon puoleinen Littoinen ovat lähellä Turkua, joten sinne matka sisältyy hintaan. Kirkonkylä on noin 15 kilometrin rajalla, ja Tarvasjoelle lisätään polttoainemaksu. Kerromme sen aina etukäteen.",
+     "Lapsiperheen autossa lastenistuimet kannattaa jättää paikalleen, sillä puhdistamme myös ne."),    ("rusko", "Rusko", "Ruskolla", "Ruskon", "Ruskolle",
+     "Rusko on Turun pohjoispuolella vain lyhyen matkan päässä, joten pesemme autoja myös siellä. Pesu tehdään kotipihallasi, eikä autoa tarvitse viedä minnekään.",
+     ["Kirkonkylä", "Vahto"],
+     "Ruskon kirkonkylä on noin 15 kilometrin päässä Turun keskustasta, joten polttoainemaksu riippuu tarkasta osoitteesta. Vahtoon lisätään aina polttoainemaksu. Kerromme summan etukäteen.",
+     "Maalla pesu onnistuu hyvin myös navetan tai konehallin edessä, kunhan sähköpistoke on lähellä."),
+    ("masku", "Masku", "Maskussa", "Maskun", "Maskuun",
+     "Tulemme Maskuun pesemään auton sisältä kotipihallasi. Pesu sopii niin arkiautolle kuin ennen auton myyntiä.",
+     ["Keskusta", "Lemu", "Askainen"],
+     "Maskun keskusta on hieman yli 15 kilometrin päässä Turun keskustasta, joten Maskuun lisätään pieni polttoainemaksu. Lemuun ja Askaisiin matka on pidempi. Kerromme summan aina ennen kuin varaus vahvistetaan.",
+     "Jos naapurisikin haluaa auton pestyksi samana päivänä, kerro siitä varatessa. Silloin matka kannattaa paremmin."),
+]
+AREA_PATH = "/alueet/"
+
+def city_path(slug):
+    return f"{AREA_PATH}auton-sisapesu-{slug}/"
+
+def city_faq(c):
+    slug, name, ine, gen, ill, intro, districts, travel, tip = c
+    return [
+        (f"Tuletteko {ill} pesemään auton?",
+         f"Kyllä. Pesemme autoja {ine}, esimerkiksi näillä alueilla: {', '.join(districts)}. Pesu tehdään kotipihallasi, ja tarvitsemme vain sähköpistokkeen."),
+        (f"Maksaako matka {ill} lisää?", travel),
+        (f"Paljonko auton sisäpesu maksaa {ine}?",
+         f"Peruspesu maksaa 55 €, kattavapesu 80 €, Deluxe-pesu 125 € ja pelkkä penkkien pesu tekstiilipesurilla 50 €. Hinnat ovat samat kaikkialla, ja niihin ei lisätä ALV:tä."),
+    ]
+
+def city_schemas(c):
+    slug, name, ine, gen, *_ = c
+    service = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Auton sisäpesu",
+        "name": f"Auton sisäpesu {ine}",
+        "url": SITE + city_path(slug),
+        "provider": {"@id": SITE + "/#yritys"},
+        "areaServed": {"@type": "City", "name": name},
+        "offers": [
+            {"@type": "Offer", "name": n, "price": str(p), "priceCurrency": "EUR"}
+            for n, p, *_ in SERVICES
+        ],
+    }
+    faq = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in city_faq(c)
+        ],
+    }
+    crumbs = breadcrumb_schema([("Etusivu", "/"), ("Toiminta-alue", AREA_PATH), (f"Auton sisäpesu {name}", city_path(slug))])
+    return [business_schema(), service, faq, crumbs]
+
+def city_body(c):
+    slug, name, ine, gen, ill, intro, districts, travel, tip = c
+    others = " · ".join(f'<a href="{city_path(o[0])}">{o[1]}</a>' for o in CITIES if o[0] != slug)
+    faq_html = "\n".join(
+        f"""          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>""" for q, a in city_faq(c))
+    district_lis = "".join(f"<li>{d}</li>" for d in districts)
+    return f"""    <section class="hero page-hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Murupolku" style="color:#cfc8bb"><a href="/" style="color:#e6e1d8">Etusivu</a> › <a href="{AREA_PATH}" style="color:#e6e1d8">Toiminta-alue</a> › <span>{name}</span></nav>
+        <h1>Auton sisäpesu {ine}</h1>
+        <p>{intro}</p>
+        <div class="btn-row">
+          <a class="btn" href="{WA}">Varaa WhatsAppilla</a>
+          <a class="btn ghost" href="/hinnat-ja-palvelut/">Katso hinnat</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <p class="answer"><strong>Lyhyesti:</strong> Autokuntoon.fi pesee auton sisältä kotipihallasi {ine}. Peruspesu maksaa 55 €, kattavapesu 80 € ja Deluxe-pesu penkkien syväpesulla 125 €. Varaus WhatsAppilla tai sähköpostilla, ja maksu vasta työn jälkeen.</p>
+
+        <h2>Missä päin {gen} pesemme?</h2>
+        <p>Tulemme kaikkialle {ill}. Tässä esimerkkejä alueista, joilla pesemme:</p>
+        <ul class="district-list">{district_lis}</ul>
+
+        <h2>Matka ja polttoainemaksu</h2>
+        <p>{travel}</p>
+
+        <h2>Näin pesu etenee</h2>
+        <ol>
+          <li>Lähetä viesti WhatsAppilla tai sähköpostilla. Kuva auton sisätiloista auttaa valitsemaan sopivan paketin.</li>
+          <li>Sovimme ajan ja paikan. Sinun ei tarvitse olla kotona, kunhan auto on auki tai avaimet sovitussa paikassa.</li>
+          <li>Pesemme auton sisältä omilla välineillämme. Tarvitsemme vain sähköpistokkeen.</li>
+          <li>Maksat tilisiirrolla, käteisellä tai MobilePaylla, kun olet nähnyt lopputuloksen.</li>
+        </ol>
+        <p><strong>Vinkki:</strong> {tip}</p>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <h2>Hinnat {ine}</h2>
+        <p class="lead">Hinnat ovat samat kaikkialla Turun seudulla. Pakettiajan ylittävä työ maksaa 30 €/h.</p>
+        <div class="grid three">
+{price_cards()}
+        </div>
+        <p class="note">Pelkkä penkkien pesu tekstiilipesurilla maksaa {SEAT[1]} €. Pakettiautot ja asuntoautot hinnoitellaan erikseen.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2>Usein kysyttyä: {name}</h2>
+        <div class="faq">
+{faq_html}
+        </div>
+        <p>Lisää vastauksia löydät <a href="/usein-kysytyt-kysymykset/">usein kysyttyjen kysymysten sivulta</a>. Lue myös <a href="/oppaat/auton-sisapesun-hinta-turku/">opas sisäpesun hinnasta</a> ja <a href="/tyoen-jaelkeae-kuvina/">katso ennen ja jälkeen -kuvat</a>.</p>
+        <p class="meta">Pesemme myös muualla: {others}</p>
+      </div>
+    </section>
+
+{cta(f"Varaa auton sisäpesu {ine}", "Lähetä viesti, niin sovitaan aika. Vastaamme yleensä saman päivän aikana.")}"""
+
+area_cards = "\n".join(
+    f"""          <a class="card area-card" href="{city_path(c[0])}">
+            <h3>Auton sisäpesu {c[1]}</h3>
+            <p>{', '.join(c[6][:4])} ja muut alueet</p>
+          </a>""" for c in CITIES)
+
+areas = f"""    <section class="hero page-hero">
+      <div class="container">
+        <h1>Toiminta-alue</h1>
+        <p>Pesemme autoja asiakkaan kotipihalla Turussa ja Turun seudulla. Valitse paikkakuntasi, niin näet alueet, matkakulut ja hinnat.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid three">
+{area_cards}
+        </div>
+        <p class="note" style="margin-top:24px">Tulemme myös esimerkiksi Paimioon. Yli 15 kilometrin päähän Turun keskustasta lisätään polttoainemaksu, josta sovitaan aina etukäteen.</p>
+      </div>
+    </section>
+
+{cta()}"""
+
+PAGES += [
+    (AREA_PATH, "Toiminta-alue – auton sisäpesu Turun seudulla | Autokuntoon.fi",
+     "Auton sisäpesu kotipihalla Turussa, Kaarinassa, Raisiossa, Naantalissa, Liedossa, Ruskolla ja Maskussa. Katso alueet, matkakulut ja hinnat.",
+     areas, [breadcrumb_schema([("Etusivu", "/"), ("Toiminta-alue", AREA_PATH)])]),
+] + [
+    (city_path(c[0]),
+     f"Auton sisäpesu {c[1]} – kotipihalla alk. 55 € | Autokuntoon.fi",
+     f"Auton sisäpesu kotipihallasi {c[2]}. Peruspesu 55 €, kattavapesu 80 €, Deluxe-pesu 125 €. Tulemme luoksesi, maksu vasta työn jälkeen.",
+     city_body(c), city_schemas(c))
+    for c in CITIES
 ]
 
 for path, title, desc, body, schemas in PAGES:
