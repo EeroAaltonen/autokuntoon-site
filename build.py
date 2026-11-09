@@ -25,7 +25,8 @@ SERVICES = [
       "Penkkien imurointi", "Ovien karmit ja tavaratila"]),
     ("Kattavapesu", 80, "2 h", "Perusteellisempi pesu, kun auto kaipaa enemmän huolenpitoa.",
      ["Kaikki peruspesun työt", "Pintojen pesu pyyhinnän sijaan",
-      "Penkkien imurointi ja puhdistus"]),
+      "Penkkien imurointi ja puhdistus", "Ikkunoiden sisäpinnat",
+      "Lemmikkien karvojen poisto", "Kattoverhoilu ja turvavyöt tarvittaessa"]),
     ("Deluxe-pesu", 125, "4 h", "Paras lopputulos: penkit pestään tekstiilipesurilla.",
      ["Kaikki kattavapesun työt", "Penkkien syväpesu tekstiilipesurilla"]),
 ]
@@ -49,6 +50,26 @@ FAQ = [
      "Kyllä. Käytämme auton sisätilojen puhdistukseen tarkoitettuja aineita, jotka ovat turvallisia sekä autolle että matkustajille."),
     ("Kuinka nopeasti saan ajan?",
      "Tarkistamme viestit päivittäin, joten aika voi järjestyä jopa samalle päivälle."),
+    ("Poistatteko koiran ja kissan karvoja?",
+     "Kyllä. Lemmikkien karvojen poisto kuuluu kattavapesuun (80 €) ja Deluxe-pesuun (125 €). Peruspesussa karvoja ei erikseen poisteta."),
+    ("Lähtevätkö tupakan ja muut hajut pesussa?",
+     "Pesu poistaa hajua aiheuttavaa likaa, ja varsinkin penkkien syväpesu tekstiilipesurilla vähentää kankaaseen imeytyneitä hajuja. Erillistä hajunpoistokäsittelyä, kuten otsonointia, emme tee, joten emme voi luvata, että pinttynyt haju lähtee kokonaan."),
+    ("Puhdistatteko nahkapenkit?",
+     "Kyllä. Nahkapenkit puhdistetaan pyyhkimällä. Tekstiilipesuria käytetään vain kangaspenkkeihin."),
+    ("Pesettekö lastenistuimet?",
+     "Kyllä. Kerro varauksen yhteydessä, montako istuinta autossa on, niin varaamme riittävästi aikaa."),
+    ("Kuuluuko kattoverhoilu ja turvavyöt pesuun?",
+     "Kyllä, kattavapesussa ja Deluxe-pesussa ne puhdistetaan, jos ne ovat likaiset."),
+    ("Puhdistatteko ikkunat sisäpuolelta?",
+     "Kyllä, ikkunoiden sisäpinnat kuuluvat kattavapesuun ja Deluxe-pesuun."),
+    ("Teettekö pesuja talvella?",
+     "Kyllä, kun auto on lämpimässä autotallissa tai hallissa. Ulkona pakkasella sisäpesua ei voi tehdä kunnolla."),
+    ("Pesettekö pakettiautoja ja asuntoautoja?",
+     "Kyllä. Niiden hinta sovitaan erikseen auton koon ja kunnon mukaan. Kerro auton malli viestissä, niin annamme hinta-arvion."),
+    ("Pitääkö minun olla kotona pesun aikana?",
+     "Ei tarvitse. Riittää, että auto on auki tai avaimet sovitussa paikassa ja sähköpistoke on käytettävissä."),
+    ("Voinko perua varauksen?",
+     "Kyllä. Peruutus on maksuton viimeistään 24 tuntia ennen sovittua aikaa. Myöhemmin perutuista tai unohtuneista varauksista veloitamme 20 €."),
 ]
 
 REVIEWS = [
@@ -361,6 +382,9 @@ prices = f"""    <section class="section page-hero">
             <li>Yli 15 km Turun keskustasta lisätään sovittu polttoainemaksu.</li>
             <li>Maksu tilisiirrolla, käteisellä tai MobilePaylla työn jälkeen.</li>
             <li>Emme ole arvonlisäverovelvollisia, joten hintoihin ei lisätä ALV:tä.</li>
+            <li>Pakettiautojen ja asuntoautojen hinta sovitaan erikseen.</li>
+            <li>Talvella pesu tehdään lämpimässä autotallissa tai hallissa.</li>
+            <li>Peruutus maksutta viimeistään 24 h ennen sovittua aikaa, myöhemmin 20 €.</li>
           </ul>
           <p><a href="/oppaat/auton-sisapesun-hinta-turku/">Lue opas: mihin sisäpesun hinta perustuu ja mikä paketti sopii sinulle</a></p>
         </div>
