@@ -1,0 +1,151 @@
+/* Autokuntoon.fi – yhteinen tyylitiedosto kaikille sivuille */
+:root {
+  --navy: #0f2a44;
+  --navy-2: #173a5c;
+  --accent: #1fb6a6;
+  --accent-dark: #148a7e;
+  --text: #1d2733;
+  --muted: #5b6876;
+  --bg: #ffffff;
+  --bg-soft: #f2f6f9;
+  --border: #dde5ec;
+  --radius: 14px;
+  --max: 1100px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: 17px;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent-dark); }
+h1, h2, h3 { line-height: 1.2; color: var(--navy); }
+h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); margin: 0 0 .6em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .6em; }
+h3 { font-size: 1.2rem; margin: 0 0 .4em; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.section { padding: 64px 0; }
+.section.soft { background: var(--bg-soft); }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 46em; }
+.center { text-align: center; }
+.center .lead { margin-left: auto; margin-right: auto; }
+
+/* Skip link saavutettavuutta varten */
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 100; }
+
+/* Yläpalkki */
+.site-header {
+  background: var(--navy);
+  position: sticky; top: 0; z-index: 50;
+}
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 64px; gap: 16px;
+}
+.logo { color: #fff; font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: .3px; }
+.logo span { color: var(--accent); }
+.nav-toggle {
+  display: none; background: none; border: 1px solid rgba(255,255,255,.4);
+  color: #fff; border-radius: 8px; padding: 6px 10px; font-size: 1rem; cursor: pointer;
+}
+.site-nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; flex-wrap: wrap; }
+.site-nav a {
+  color: #dbe7f2; text-decoration: none; padding: 8px 12px; border-radius: 8px; display: block; font-size: .95rem;
+}
+.site-nav a:hover, .site-nav a[aria-current="page"] { background: var(--navy-2); color: #fff; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .site-nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: 8px 20px 16px; }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; }
+}
+
+/* Painikkeet */
+.btn {
+  display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+  padding: 13px 22px; border-radius: 10px; font-weight: 700; border: 0; cursor: pointer; font-size: 1rem;
+}
+.btn:hover { background: var(--accent-dark); }
+.btn.ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); }
+.btn.ghost:hover { background: rgba(255,255,255,.1); }
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, #1d5a6e 100%);
+  color: #fff; padding: 80px 0 72px;
+}
+.hero h1 { color: #fff; max-width: 18em; }
+.hero p { color: #d3e2ee; font-size: 1.2rem; max-width: 36em; margin: 0 0 28px; }
+.hero .badges { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; padding: 0; list-style: none; color: #bfe9e3; font-size: .95rem; }
+.page-hero { padding: 56px 0 44px; }
+
+/* Kortit */
+.grid { display: grid; gap: 20px; }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid.three { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.grid.four { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;
+}
+.card p { margin: 0; color: var(--muted); }
+
+/* Hintakortit */
+.price-card { display: flex; flex-direction: column; gap: 12px; }
+.price-card.featured { border: 2px solid var(--accent); }
+.price-card .tag { font-size: .8rem; font-weight: 700; color: var(--accent-dark); text-transform: uppercase; letter-spacing: .5px; }
+.price { font-size: 2.4rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.price small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+.price-card ul { margin: 0; padding-left: 1.2em; color: var(--text); flex: 1; }
+.price-card li { margin: 4px 0; }
+.note { font-size: .95rem; color: var(--muted); }
+
+/* Kuvagalleria */
+.gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.gallery figure { margin: 0; }
+.gallery img, .placeholder {
+  aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: 10px; background: var(--bg-soft);
+}
+.placeholder {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: var(--muted); border: 2px dashed var(--border); font-size: .9rem; padding: 12px;
+}
+.gallery figcaption { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+
+/* Asiakaspalautteet */
+blockquote.card { margin: 0; }
+blockquote.card p { color: var(--text); font-style: italic; }
+blockquote.card footer { margin-top: 12px; font-weight: 700; color: var(--navy); }
+
+/* UKK */
+.faq details { border: 1px solid var(--border); border-radius: 10px; padding: 0 18px; margin-bottom: 10px; background: #fff; }
+.faq summary { cursor: pointer; padding: 16px 0; font-weight: 700; color: var(--navy); }
+.faq details p { margin: 0 0 16px; color: var(--muted); }
+
+/* Yhteystiedot */
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.contact-list a { font-weight: 700; }
+
+/* CTA-palkki */
+.cta { background: var(--navy); color: #fff; text-align: center; }
+.cta h2 { color: #fff; }
+.cta p { color: #d3e2ee; }
+.cta .btn-row { justify-content: center; }
+
+/* Alapalkki */
+.site-footer { background: #0a1d30; color: #a9bccd; padding: 40px 0; font-size: .95rem; }
+.site-footer a { color: #dbe7f2; }
+.site-footer .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.site-footer h2 { color: #fff; font-size: 1.05rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin: 4px 0; }
+.copy { margin-top: 28px; border-top: 1px solid #1e3550; padding-top: 18px; }
