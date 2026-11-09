@@ -177,6 +177,7 @@ def page(path, title, desc, body, schemas=()):
           <h2 style="margin-top:16px">Oppaat</h2>
           <ul>
             <li><a href="/oppaat/auton-sisapesun-hinta-turku/">Auton sisäpesun hinta Turussa</a></li>
+            <li><a href="/oppaat/auton-sisapesu-ennen-myyntia/">Auton sisäpesu ennen myyntiä</a></li>
           </ul>
         </div>
       </div>
@@ -497,16 +498,17 @@ ART_PATH = "/oppaat/auton-sisapesun-hinta-turku/"
 ART_TITLE = "Auton sisäpesun hinta Turussa: mitä pesu maksaa ja mitä se sisältää"
 ART_DATE = "2026-11-09"
 
-def article_schema():
+def article_schema(path=None, title=None, date=None, image="/images/bmw-ennen-jalkeen.jpg"):
+    path, title, date = path or ART_PATH, title or ART_TITLE, date or ART_DATE
     return {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": ART_TITLE,
-        "datePublished": ART_DATE,
-        "dateModified": ART_DATE,
+        "headline": title,
+        "datePublished": date,
+        "dateModified": date,
         "inLanguage": "fi",
-        "mainEntityOfPage": SITE + ART_PATH,
-        "image": SITE + "/images/bmw-ennen-jalkeen.jpg",
+        "mainEntityOfPage": SITE + path,
+        "image": SITE + image,
         "author": {"@id": SITE + "/#yritys"},
         "publisher": {"@id": SITE + "/#yritys"},
     }
@@ -558,7 +560,7 @@ article = f"""    <article class="section">
         <ul>
           <li><strong>Peruspesu 55 €</strong> sopii, kun auto on arkikäytössä ja kaipaa imurointia ja pintojen puhdistusta.</li>
           <li><strong>Kattavapesu 80 €</strong> sopii, kun pinnoissa on pinttynyttä likaa tai edellisestä pesusta on kulunut pitkä aika.</li>
-          <li><strong>Deluxe-pesu 125 €</strong> sopii ennen auton myyntiä, kangaspenkkien tahroihin tai kun haluat sisätilat mahdollisimman lähelle uutta.</li>
+          <li><strong>Deluxe-pesu 125 €</strong> sopii ennen auton myyntiä (<a href="/oppaat/auton-sisapesu-ennen-myyntia/">lue opas</a>), kangaspenkkien tahroihin tai kun haluat sisätilat mahdollisimman lähelle uutta.</li>
           <li><strong>Penkkien pesu 50 €</strong> riittää, jos muu auto on siisti, mutta penkeissä on esimerkiksi kahvitahroja.</li>
         </ul>
         <p>Jos et ole varma, lähetä WhatsAppilla kuva auton sisätiloista, niin suosittelemme sopivan paketin.</p>
@@ -580,6 +582,57 @@ article = f"""    <article class="section">
 
 {cta("Varaa sisäpesu kotipihallesi", "Lähetä viesti, niin sovitaan aika. Turku, Kaarina, Raisio, Naantali, Lieto, Rusko, Masku ja Paimio.")}"""
 
+# ---------- Opas: sisäpesu ennen myyntiä ----------
+ART2_PATH = "/oppaat/auton-sisapesu-ennen-myyntia/"
+ART2_TITLE = "Auton sisäpesu ennen myyntiä: näin saat autosta paremman ensivaikutelman"
+ART2_DATE = "2026-11-09"
+
+article2 = f"""    <article class="section">
+      <div class="container prose">
+        <nav class="crumbs" aria-label="Murupolku"><a href="/">Etusivu</a> › <span>Oppaat</span> › <span>Sisäpesu ennen myyntiä</span></nav>
+        <h1>{ART2_TITLE}</h1>
+        <p class="meta">Julkaistu 9.11.2026 · Autokuntoon.fi</p>
+
+        <p class="answer"><strong>Lyhyesti:</strong> Ostaja tekee päätöksensä pitkälti sen perusteella, miltä auto näyttää ja tuoksuu sisältä. Ennen myyntiä kannattaa imuroida ja puhdistaa kaikki pinnat sekä syväpestä kangaspenkit. Turussa Autokuntoon.fi:n Deluxe-pesu (125 €) sisältää kaiken tämän, ja se tehdään kotipihallasi.</p>
+
+        <h2>Miksi sisäpesu kannattaa ennen myyntiä?</h2>
+        <ul>
+          <li><strong>Myynti-ilmoituksen kuvat.</strong> Puhtaat penkit ja lattiat näyttävät kuvissa paremmilta, ja ilmoitus erottuu muista.</li>
+          <li><strong>Ensivaikutelma koeajolla.</strong> Likainen sisätila saa ostajan epäilemään, että autoa on hoidettu muutenkin huonosti.</li>
+          <li><strong>Vähemmän tingittävää.</strong> Tahrat ja roskat ovat helppoja perusteita pyytää hinnasta alennusta.</li>
+          <li><strong>Hajut pois.</strong> Penkkien syväpesu poistaa kankaaseen imeytynyttä likaa, joka usein aiheuttaa ummehtuneen hajun.</li>
+        </ul>
+
+        <h2>Muistilista ennen myyntiä</h2>
+        <ol>
+          <li>Tyhjennä auto omista tavaroistasi: hansikaslokero, ovitaskut, tavaratila ja penkkien alustat.</li>
+          <li>Imuroi lattiat, matot, penkit ja tavaratila. Muista penkkien välit ja kiskot.</li>
+          <li>Pese kojelauta, keskikonsoli, ovien verhoilut ja ovien karmit.</li>
+          <li>Syväpese kangaspenkit tekstiilipesurilla, jos niissä on tahroja tai tummumia.</li>
+          <li>Puhdista ikkunat sisäpuolelta, jotta kuvissa ei näy heijastuksia ja raitoja.</li>
+          <li>Ota myynti-ilmoituksen kuvat heti pesun jälkeen päivänvalossa.</li>
+        </ol>
+
+        <h2>Minkä paketin valitsen?</h2>
+        <ul>
+          <li><strong>Deluxe-pesu 125 €</strong> (enintään 4 h) on paras valinta myyntiin: kaikki pinnat pestään ja kangaspenkit syväpestään tekstiilipesurilla.</li>
+          <li><strong>Kattavapesu 80 €</strong> (enintään 2 h) riittää, jos penkit ovat nahkaa tai ne ovat jo valmiiksi siistit.</li>
+          <li><strong>Penkkien pesu 50 €</strong> sopii, jos olet itse imuroinut ja pyyhkinyt auton, mutta penkeissä on tahroja.</li>
+        </ul>
+        <p>Katso kaikki hinnat ja pakettien sisällöt <a href="/hinnat-ja-palvelut/">hintasivulta</a> tai lue <a href="/oppaat/auton-sisapesun-hinta-turku/">opas sisäpesun hinnasta</a>.</p>
+
+        <figure style="margin:0">
+          <img class="wide-img" src="/images/bmw-ennen-jalkeen.jpg" alt="BMW:n etumatkustajan puoli ennen ja jälkeen sisäpesun" width="1600" height="902" loading="lazy">
+          <figcaption class="meta">Ero näkyy heti: BMW 3-sarjan farmari ennen ja jälkeen sisäpesun.</figcaption>
+        </figure>
+
+        <h2>Milloin pesu kannattaa tehdä?</h2>
+        <p>Paras hetki on päivä tai kaksi ennen myynti-ilmoituksen kuvaamista. Silloin auto on puhtaimmillaan sekä kuvissa että ensimmäisillä koeajoilla. Varaa aika hyvissä ajoin. Tarkistamme viestit päivittäin, ja aika voi järjestyä jopa samalle päivälle.</p>
+      </div>
+    </article>
+
+{cta("Myymässä autoa?", "Varaa Deluxe-pesu kotipihallesi Turun seudulla. Lähetä viesti, niin sovitaan aika.")}"""
+
 PAGES = [
     ("/", "Auton sisäpesu kotipihalla Turussa | Autokuntoon.fi",
      "Auton sisäpesu suoraan kotipihallasi Turussa ja Turun seudulla. Peruspesu 55 €, kattavapesu 80 €, Deluxe-pesu 125 €. Varaa aika WhatsAppilla.",
@@ -599,6 +652,9 @@ PAGES = [
     (ART_PATH, "Auton sisäpesun hinta Turussa 2026 – hinnat ja paketit | Autokuntoon.fi",
      "Paljonko auton sisäpesu maksaa Turussa? Peruspesu 55 €, kattavapesu 80 €, Deluxe 125 €. Katso mitä hintaan sisältyy ja mikä paketti sopii autollesi.",
      article, [article_schema(), breadcrumb_schema([("Etusivu", "/"), ("Auton sisäpesun hinta Turussa", ART_PATH)])]),
+    (ART2_PATH, "Auton sisäpesu ennen myyntiä – muistilista ja hinnat | Autokuntoon.fi",
+     "Myymässä autoa? Puhdas sisätila parantaa ensivaikutelmaa ja myynti-ilmoituksen kuvia. Muistilista ennen myyntiä ja Deluxe-pesu kotipihalla Turussa 125 €.",
+     article2, [article_schema(ART2_PATH, ART2_TITLE, ART2_DATE), breadcrumb_schema([("Etusivu", "/"), ("Auton sisäpesu ennen myyntiä", ART2_PATH)])]),
 ]
 
 for path, title, desc, body, schemas in PAGES:

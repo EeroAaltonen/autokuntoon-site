@@ -186,3 +186,4 @@ table { border-collapse: collapse; width: 100%; font-size: .95rem; }
 th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
 th { font-family: var(--head-font); text-transform: uppercase; font-weight: 600; color: var(--navy); }
 td:nth-child(2), td:nth-child(3) { white-space: nowrap; }
+.prose ol { padding-left: 1.4em; } .prose ol li { margin: 6px 0; }
