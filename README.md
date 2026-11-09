@@ -2,7 +2,7 @@
 
 Autokuntoon.fi:n verkkosivusto: auton sisäpesu kotipihalla Turussa.
 
-Sivusto on tavallista HTML:ää ja CSS:ää ilman julkaisutyökaluja, joten mitä tahansa tiedostoa voi muokata suoraan.
+Sivusto on tavallista HTML:ää ja CSS:ää. Sivujen HTML tuotetaan skriptillä `build.py`: tekstit, hinnat ja sivut ovat siellä. Muokkaa `build.py`:tä ja aja `python3 build.py`, niin kaikki sivut ja `sitemap.xml` päivittyvät. Tuotetut HTML-tiedostot tallennetaan repoon, joten Cloudflare julkaisee ne sellaisenaan.
 
 ## Rakenne
 
@@ -12,6 +12,8 @@ Sivusto on tavallista HTML:ää ja CSS:ää ilman julkaisutyökaluja, joten mit�
 | `hinnat-ja-palvelut/index.html` | Hinnat ja palvelut |
 | `tyoen-jaelkeae-kuvina/index.html` | Ennen ja jälkeen -kuvat |
 | `usein-kysytyt-kysymykset/index.html` | UKK |
+| `oppaat/…/index.html` | Hakusanoihin kohdistetut oppaat |
+| `build.py` | Tuottaa kaikki sivut |
 | `ota-yhteyttae/index.html` | Yhteystiedot |
 | `assets/style.css` | Kaikkien sivujen ulkoasu |
 | `images/` | Kuvat (lisätään myöhemmin) |
