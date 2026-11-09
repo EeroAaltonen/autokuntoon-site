@@ -30,3 +30,5 @@
 - [Auton sisäpesu Raisio](https://www.autokuntoon.fi/alueet/auton-sisapesu-raisio/)
 - [Auton sisäpesu Naantali](https://www.autokuntoon.fi/alueet/auton-sisapesu-naantali/)
 - [Auton sisäpesu Lieto](https://www.autokuntoon.fi/alueet/auton-sisapesu-lieto/)
+- [Auton sisäpesu Rusko](https://www.autokuntoon.fi/alueet/auton-sisapesu-rusko/)
+- [Auton sisäpesu Masku](https://www.autokuntoon.fi/alueet/auton-sisapesu-masku/)

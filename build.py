@@ -198,7 +198,8 @@ def page(path, title, desc, body, schemas=()):
           <h2 style="margin-top:16px">Toiminta-alue</h2>
           <ul>
             <li><a href="/alueet/auton-sisapesu-turku/">Turku</a> · <a href="/alueet/auton-sisapesu-kaarina/">Kaarina</a> · <a href="/alueet/auton-sisapesu-raisio/">Raisio</a></li>
-            <li><a href="/alueet/auton-sisapesu-naantali/">Naantali</a> · <a href="/alueet/auton-sisapesu-lieto/">Lieto</a> · <a href="/alueet/">Kaikki alueet</a></li>
+            <li><a href="/alueet/auton-sisapesu-naantali/">Naantali</a> · <a href="/alueet/auton-sisapesu-lieto/">Lieto</a></li>
+            <li><a href="/alueet/auton-sisapesu-rusko/">Rusko</a> · <a href="/alueet/auton-sisapesu-masku/">Masku</a> · <a href="/alueet/">Kaikki alueet</a></li>
           </ul>
           <h2 style="margin-top:16px">Oppaat</h2>
           <ul>
@@ -338,7 +339,7 @@ home = f"""    <section class="hero">
         </div>
         <div>
           <h2>Missä toimimme</h2>
-          <p>Meillä ei ole kiinteää toimipistettä, vaan tulemme sinun luoksesi. Toimimme pääasiassa <a href="/alueet/auton-sisapesu-turku/">Turussa</a> sekä lähikunnissa, kuten <a href="/alueet/auton-sisapesu-kaarina/">Kaarinassa</a>, <a href="/alueet/auton-sisapesu-raisio/">Raisiossa</a>, <a href="/alueet/auton-sisapesu-naantali/">Naantalissa</a>, <a href="/alueet/auton-sisapesu-lieto/">Liedossa</a>, Ruskolla, Maskussa ja Paimiossa. <a href="/alueet/">Katso koko toiminta-alue</a>.</p>
+          <p>Meillä ei ole kiinteää toimipistettä, vaan tulemme sinun luoksesi. Toimimme pääasiassa <a href="/alueet/auton-sisapesu-turku/">Turussa</a> sekä lähikunnissa, kuten <a href="/alueet/auton-sisapesu-kaarina/">Kaarinassa</a>, <a href="/alueet/auton-sisapesu-raisio/">Raisiossa</a>, <a href="/alueet/auton-sisapesu-naantali/">Naantalissa</a>, <a href="/alueet/auton-sisapesu-lieto/">Liedossa</a>, <a href="/alueet/auton-sisapesu-rusko/">Ruskolla</a>, <a href="/alueet/auton-sisapesu-masku/">Maskussa</a> ja Paimiossa. <a href="/alueet/">Katso koko toiminta-alue</a>.</p>
           <p>Yli 15 kilometrin päähän Turun keskustasta lisäämme pienen polttoainemaksun, josta sovitaan etukäteen.</p>
         </div>
       </div>
@@ -713,7 +714,16 @@ CITIES = [
      "Tulemme Lietoon pesemään auton sisältä kotipihallasi. Pesu sopii arkiautolle, lapsiperheen autolle tai ennen auton myyntiä.",
      ["Kirkonkylä", "Ilmarinen", "Avantti", "Loukinainen", "Littoinen", "Tarvasjoki"],
      "Ilmarinen, Avantti ja Liedon puoleinen Littoinen ovat lähellä Turkua, joten sinne matka sisältyy hintaan. Kirkonkylä on noin 15 kilometrin rajalla, ja Tarvasjoelle lisätään polttoainemaksu. Kerromme sen aina etukäteen.",
-     "Lapsiperheen autossa lastenistuimet kannattaa jättää paikalleen, sillä puhdistamme myös ne."),
+     "Lapsiperheen autossa lastenistuimet kannattaa jättää paikalleen, sillä puhdistamme myös ne."),    ("rusko", "Rusko", "Ruskolla", "Ruskon", "Ruskolle",
+     "Rusko on Turun pohjoispuolella vain lyhyen matkan päässä, joten pesemme autoja myös siellä. Pesu tehdään kotipihallasi, eikä autoa tarvitse viedä minnekään.",
+     ["Kirkonkylä", "Vahto"],
+     "Ruskon kirkonkylä on noin 15 kilometrin päässä Turun keskustasta, joten polttoainemaksu riippuu tarkasta osoitteesta. Vahtoon lisätään aina polttoainemaksu. Kerromme summan etukäteen.",
+     "Maalla pesu onnistuu hyvin myös navetan tai konehallin edessä, kunhan sähköpistoke on lähellä."),
+    ("masku", "Masku", "Maskussa", "Maskun", "Maskuun",
+     "Tulemme Maskuun pesemään auton sisältä kotipihallasi. Pesu sopii niin arkiautolle kuin ennen auton myyntiä.",
+     ["Keskusta", "Lemu", "Askainen"],
+     "Maskun keskusta on hieman yli 15 kilometrin päässä Turun keskustasta, joten Maskuun lisätään pieni polttoainemaksu. Lemuun ja Askaisiin matka on pidempi. Kerromme summan aina ennen kuin varaus vahvistetaan.",
+     "Jos naapurisikin haluaa auton pestyksi samana päivänä, kerro siitä varatessa. Silloin matka kannattaa paremmin."),
 ]
 AREA_PATH = "/alueet/"
 
@@ -841,7 +851,7 @@ areas = f"""    <section class="hero page-hero">
         <div class="grid three">
 {area_cards}
         </div>
-        <p class="note" style="margin-top:24px">Tulemme myös Ruskolle, Maskuun ja Paimioon. Yli 15 kilometrin päähän Turun keskustasta lisätään polttoainemaksu, josta sovitaan aina etukäteen.</p>
+        <p class="note" style="margin-top:24px">Tulemme myös esimerkiksi Paimioon. Yli 15 kilometrin päähän Turun keskustasta lisätään polttoainemaksu, josta sovitaan aina etukäteen.</p>
       </div>
     </section>
 
@@ -849,7 +859,7 @@ areas = f"""    <section class="hero page-hero">
 
 PAGES += [
     (AREA_PATH, "Toiminta-alue – auton sisäpesu Turun seudulla | Autokuntoon.fi",
-     "Auton sisäpesu kotipihalla Turussa, Kaarinassa, Raisiossa, Naantalissa ja Liedossa. Katso alueet, matkakulut ja hinnat.",
+     "Auton sisäpesu kotipihalla Turussa, Kaarinassa, Raisiossa, Naantalissa, Liedossa, Ruskolla ja Maskussa. Katso alueet, matkakulut ja hinnat.",
      areas, [breadcrumb_schema([("Etusivu", "/"), ("Toiminta-alue", AREA_PATH)])]),
 ] + [
     (city_path(c[0]),
