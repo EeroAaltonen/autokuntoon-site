@@ -172,3 +172,17 @@ blockquote.card footer { margin-top: 12px; font-weight: 700; color: var(--navy);
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin: 4px 0; }
 .copy { margin-top: 28px; border-top: 1px solid #3a3b3a; padding-top: 18px; }
+
+/* Oppaat ja artikkelit */
+.prose { max-width: 760px; }
+.prose h2 { margin-top: 1.6em; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin: 6px 0; }
+.crumbs { font-size: .9rem; color: var(--muted); margin-bottom: 12px; }
+.meta { color: var(--muted); font-size: .95rem; }
+.answer { background: var(--bg-soft); border-left: 4px solid var(--accent); padding: 16px 18px; border-radius: 8px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-family: var(--head-font); text-transform: uppercase; font-weight: 600; color: var(--navy); }
+td:nth-child(2), td:nth-child(3) { white-space: nowrap; }
