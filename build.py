@@ -69,7 +69,7 @@ FAQ = [
     ("Pitääkö minun olla kotona pesun aikana?",
      "Ei tarvitse. Riittää, että auto on auki tai avaimet sovitussa paikassa ja sähköpistoke on käytettävissä."),
     ("Voinko perua varauksen?",
-     "Kyllä. Peruutus on maksuton viimeistään 24 tuntia ennen sovittua aikaa. Myöhemmin perutuista tai unohtuneista varauksista veloitamme 20 €."),
+     "Kyllä. Peruutus on maksuton viimeistään 48 tuntia ennen sovittua aikaa. Myöhemmin perutuista tai unohtuneista varauksista veloitamme 20 €."),
 ]
 
 REVIEWS = [
@@ -384,7 +384,7 @@ prices = f"""    <section class="section page-hero">
             <li>Emme ole arvonlisäverovelvollisia, joten hintoihin ei lisätä ALV:tä.</li>
             <li>Pakettiautojen ja asuntoautojen hinta sovitaan erikseen.</li>
             <li>Talvella pesu tehdään lämpimässä autotallissa tai hallissa.</li>
-            <li>Peruutus maksutta viimeistään 24 h ennen sovittua aikaa, myöhemmin 20 €.</li>
+            <li>Peruutus maksutta viimeistään 48 h ennen sovittua aikaa, myöhemmin 20 €.</li>
           </ul>
           <p><a href="/oppaat/auton-sisapesun-hinta-turku/">Lue opas: mihin sisäpesun hinta perustuu ja mikä paketti sopii sinulle</a></p>
         </div>
