@@ -1,6 +1,6 @@
 # Autokuntoon.fi
 
-> Autokuntoon.fi on turkulainen pienyritys (Y-tunnus 3525496-7), joka tekee auton sisäpesuja asiakkaan kotipihalla Turussa ja Turun seudulla. Asiakas tarvitsee vain auton ja sähköpistokkeen.
+> Autokuntoon.fi on turkulainen pienyritys (Y-tunnus 3525496-7), joka tekee auton sisäpesuja asiakkaan kotipihalla Turussa ja Turun seudulla (mm. Kaarina, Raisio, Naantali, Lieto, Rusko, Masku, Paimio). Asiakas tarvitsee vain auton ja sähköpistokkeen.
 
 ## Palvelut ja hinnat
 - Peruspesu 55 € (enintään 1 h): roskien poisto, imurointi, pintojen pyyhintä, penkkien imurointi, ovien karmit ja tavaratila.

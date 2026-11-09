@@ -1,14 +1,16 @@
 /* Autokuntoon.fi – yhteinen tyylitiedosto kaikille sivuille */
 :root {
-  --navy: #0f2a44;
-  --navy-2: #173a5c;
-  --accent: #1fb6a6;
-  --accent-dark: #148a7e;
-  --text: #1d2733;
-  --muted: #5b6876;
+  /* Brändivärit logosta: hiilenharmaa, vaalea lämmin harmaa ja punainen */
+  --navy: #2a2b2a;
+  --navy-2: #3a3b3a;
+  --accent: #d13c32;
+  --accent-dark: #a92e26;
+  --text: #232423;
+  --muted: #5e5c58;
   --bg: #ffffff;
-  --bg-soft: #f2f6f9;
-  --border: #dde5ec;
+  --bg-soft: #efece6;
+  --border: #ddd8cf;
+  --head-font: "Oswald", "Arial Narrow", system-ui, sans-serif;
   --radius: 14px;
   --max: 1100px;
 }
@@ -25,7 +27,8 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--accent-dark); }
-h1, h2, h3 { line-height: 1.2; color: var(--navy); }
+h1, h2, h3 { line-height: 1.15; color: var(--navy); font-family: var(--head-font); font-weight: 600; letter-spacing: .3px; }
+h1, h2 { text-transform: uppercase; }
 h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); margin: 0 0 .6em; }
 h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .6em; }
 h3 { font-size: 1.2rem; margin: 0 0 .4em; }
@@ -44,21 +47,23 @@ h3 { font-size: 1.2rem; margin: 0 0 .4em; }
 /* Yläpalkki */
 .site-header {
   background: var(--navy);
+  border-bottom: 3px solid var(--accent);
   position: sticky; top: 0; z-index: 50;
 }
 .site-header .container {
   display: flex; align-items: center; justify-content: space-between;
   min-height: 64px; gap: 16px;
 }
-.logo { color: #fff; font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: .3px; }
-.logo span { color: var(--accent); }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo img { height: 40px; width: auto; }
+.logo span { color: var(--accent); font-family: var(--head-font); font-weight: 700; font-size: 1.35rem; letter-spacing: .5px; }
 .nav-toggle {
   display: none; background: none; border: 1px solid rgba(255,255,255,.4);
   color: #fff; border-radius: 8px; padding: 6px 10px; font-size: 1rem; cursor: pointer;
 }
 .site-nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; flex-wrap: wrap; }
 .site-nav a {
-  color: #dbe7f2; text-decoration: none; padding: 8px 12px; border-radius: 8px; display: block; font-size: .95rem;
+  color: #e6e1d8; text-decoration: none; padding: 8px 12px; border-radius: 8px; display: block; font-size: .95rem;
 }
 .site-nav a:hover, .site-nav a[aria-current="page"] { background: var(--navy-2); color: #fff; }
 
@@ -81,12 +86,18 @@ h3 { font-size: 1.2rem; margin: 0 0 .4em; }
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, #1d5a6e 100%);
-  color: #fff; padding: 80px 0 72px;
+  background: var(--navy);
+  color: #fff; padding: 56px 0 64px;
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; }
+.hero-logo { width: 100%; max-width: 400px; justify-self: end; border-radius: var(--radius); }
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-logo { order: -1; max-width: 260px; justify-self: center; margin-bottom: -12px; }
 }
 .hero h1 { color: #fff; max-width: 18em; }
-.hero p { color: #d3e2ee; font-size: 1.2rem; max-width: 36em; margin: 0 0 28px; }
-.hero .badges { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; padding: 0; list-style: none; color: #bfe9e3; font-size: .95rem; }
+.hero p { color: #e6e1d8; font-size: 1.2rem; max-width: 36em; margin: 0 0 28px; }
+.hero .badges { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; padding: 0; list-style: none; color: #cfc8bb; font-size: .95rem; }
 .page-hero { padding: 56px 0 44px; }
 
 /* Kortit */
@@ -111,6 +122,17 @@ h3 { font-size: 1.2rem; margin: 0 0 .4em; }
 
 /* Kuvagalleria */
 .gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.pairs { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.pair h3 { margin-bottom: 10px; }
+.pair-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pair figure { margin: 0; position: relative; }
+.pair img { aspect-ratio: 3 / 4; width: 100%; object-fit: cover; border-radius: 10px; }
+.pair figcaption {
+  position: absolute; left: 8px; top: 8px; background: var(--navy); color: #fff;
+  font-family: var(--head-font); text-transform: uppercase; font-size: .8rem; padding: 2px 8px; border-radius: 6px;
+}
+.pair figure.after figcaption { background: var(--accent); }
+.wide-img { border-radius: var(--radius); width: 100%; }
 .gallery figure { margin: 0; }
 .gallery img, .placeholder {
   aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: 10px; background: var(--bg-soft);
@@ -138,14 +160,15 @@ blockquote.card footer { margin-top: 12px; font-weight: 700; color: var(--navy);
 /* CTA-palkki */
 .cta { background: var(--navy); color: #fff; text-align: center; }
 .cta h2 { color: #fff; }
-.cta p { color: #d3e2ee; }
+.cta p { color: #e6e1d8; }
+.cta { border-top: 3px solid var(--accent); }
 .cta .btn-row { justify-content: center; }
 
 /* Alapalkki */
-.site-footer { background: #0a1d30; color: #a9bccd; padding: 40px 0; font-size: .95rem; }
-.site-footer a { color: #dbe7f2; }
+.site-footer { background: #1e1f1e; color: #b9b3a8; padding: 40px 0; font-size: .95rem; }
+.site-footer a { color: #e6e1d8; }
 .site-footer .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .site-footer h2 { color: #fff; font-size: 1.05rem; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin: 4px 0; }
-.copy { margin-top: 28px; border-top: 1px solid #1e3550; padding-top: 18px; }
+.copy { margin-top: 28px; border-top: 1px solid #3a3b3a; padding-top: 18px; }
