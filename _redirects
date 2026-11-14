@@ -1,0 +1,5 @@
+# Vanhan Webador-sivuston osoitteet, joita ei enää ole (Search Console: 404)
+/sv      /  301
+/sv/*    /  301
+/home    /  301
+/home/   /  301
