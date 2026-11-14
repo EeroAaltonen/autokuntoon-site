@@ -205,6 +205,7 @@ def page(path, title, desc, body, schemas=()):
           <ul>
             <li><a href="/oppaat/auton-sisapesun-hinta-turku/">Auton sisäpesun hinta Turussa</a></li>
             <li><a href="/oppaat/auton-sisapesu-ennen-myyntia/">Auton sisäpesu ennen myyntiä</a></li>
+            <li><a href="/oppaat/mobiili-auton-sisapesu-turku/">Mobiili sisäpesu vai pesuhalli?</a></li>
           </ul>
         </div>
       </div>
@@ -663,6 +664,91 @@ article2 = f"""    <article class="section">
 
 {cta("Myymässä autoa?", "Varaa Deluxe-pesu kotipihallesi Turun seudulla. Lähetä viesti, niin sovitaan aika.")}"""
 
+# ---------- Opas: mobiilipesu vai pesuhalli ----------
+ART3_PATH = "/oppaat/mobiili-auton-sisapesu-turku/"
+ART3_TITLE = "Mobiili auton sisäpesu Turussa: pesijä kotipihalle vai auto pesuhalliin?"
+ART3_DATE = "2026-11-14"
+
+ART3_FAQ = [
+    ("Tuleeko auton sisäpesijä kotiin Turussa?",
+     "Kyllä. Autokuntoon.fi pesee auton sisältä asiakkaan kotipihalla, työpaikan parkkipaikalla tai taloyhtiön pihassa Turussa ja lähikunnissa (Kaarina, Raisio, Naantali, Lieto, Rusko, Masku). Paikalle tarvitaan vain auto ja sähköpistoke."),
+    ("Mitä mobiili sisäpesu maksaa?",
+     "Autokuntoon.fi:n kotipihalla tehtävä sisäpesu maksaa 55–125 €: peruspesu 55 €, kattavapesu 80 € ja Deluxe-pesu penkkien syväpesulla 125 €. Matka sisältyy hintaan, kun osoite on enintään 15 km päässä Turun keskustasta. Kauempana lisätään sovittu polttoainemaksu."),
+    ("Pitääkö minun olla kotona pesun aikana?",
+     "Ei tarvitse. Riittää, että auto on paikalla ja sähköpistoke on käytettävissä. Maksu tehdään vasta työn jälkeen tilisiirrolla, käteisellä tai MobilePaylla."),
+    ("Voiko autoa pestä sisältä kotipihalla talvella?",
+     "Voi. Talvella pesu tehdään lämpimässä autotallissa tai hallissa, jotta pinnat ja penkit kuivuvat kunnolla."),
+]
+
+def qa_schema(items):
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in items
+        ],
+    }
+
+art3_faq_html = "\n".join(f"        <h3>{q}</h3>\n        <p>{a}</p>" for q, a in ART3_FAQ)
+
+article3 = f"""    <article class="section">
+      <div class="container prose">
+        <nav class="crumbs" aria-label="Murupolku"><a href="/">Etusivu</a> › <span>Oppaat</span> › <span>Mobiili sisäpesu</span></nav>
+        <h1>{ART3_TITLE}</h1>
+        <p class="meta">Julkaistu 14.11.2026 · Autokuntoon.fi</p>
+
+        <p class="answer"><strong>Lyhyesti:</strong> Mobiilissa sisäpesussa pesijä tulee auton luo, joten autoa ei tarvitse ajaa pesulaan eikä jäädä odottamaan. Turun seudulla Autokuntoon.fi tekee sisäpesuja asiakkaan kotipihalla hintaan 55–125 €. Tarvitaan vain auto ja sähköpistoke. Pesuhalli on parempi valinta, jos haluat samalla ulkopesun tai pikaisen imuroinnin heti.</p>
+
+        <h2>Mitä mobiili sisäpesu tarkoittaa?</h2>
+        <p>Mobiilipesussa pesijä tuo välineet mukanaan: imurin, tekstiilipesurin ja pesuaineet. Työ tehdään siellä, missä auto jo on, esimerkiksi omakotitalon pihassa, taloyhtiön parkkipaikalla tai työpaikan pihassa. Laitteet kytketään tavalliseen sähköpistokkeeseen, ja usein lämmitystolpan pistoke riittää.</p>
+
+        <h2>Vertailu: kotipiha vai pesuhalli?</h2>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>Mobiili sisäpesu kotipihalla</th><th>Sisäpesu pesuhallissa</th></tr></thead>
+          <tbody>
+            <tr><td>Ajomatka</td><td>Ei ajomatkaa</td><td>Auto viedään ja haetaan</td></tr>
+            <tr><td>Oma aika</td><td>Voit tehdä muuta, kotona ei tarvitse olla</td><td>Odottelu tai kaksi käyntiä</td></tr>
+            <tr><td>Hinta (sisäpesu)</td><td>55–125 € (Autokuntoon.fi)</td><td>Vaihtelee pesulan ja paketin mukaan</td></tr>
+            <tr><td>Ulkopesu samalla</td><td>Ei</td><td>Yleensä mahdollinen</td></tr>
+            <tr><td>Mitä tarvitaan</td><td>Sähköpistoke</td><td>Vapaa aika pesulassa</td></tr>
+            <tr><td>Talvella</td><td>Lämmin autotalli tai halli</td><td>Aina sisätiloissa</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h2>Milloin kotipihapesu on paras valinta?</h2>
+        <ul>
+          <li><strong>Sinulla ei ole aikaa viedä autoa pesulaan.</strong> Pesu tehdään sillä aikaa, kun olet töissä tai kotona.</li>
+          <li><strong>Auto tarvitsee perusteellisen pesun.</strong> Penkkien syväpesu tekstiilipesurilla vie tunteja, ja se on helpointa tehdä auton omalla paikalla.</li>
+          <li><strong>Olet myymässä autoa.</strong> Puhdas sisätila parantaa myynti-ilmoituksen kuvia (<a href="/oppaat/auton-sisapesu-ennen-myyntia/">lue opas</a>).</li>
+          <li><strong>Autossa on lemmikin karvoja tai lasten jälkiä.</strong> Niiden poistaminen vaatii aikaa, jota pikapesussa ei ole.</li>
+        </ul>
+
+        <h2>Milloin pesuhalli sopii paremmin?</h2>
+        <ul>
+          <li>Haluat sisäpesun lisäksi ulkopesun tai vahauksen samalla kertaa.</li>
+          <li>Auton luona ei ole sähköpistoketta.</li>
+          <li>Tarvitset vain nopean imuroinnin. Silloin huoltoaseman itsepalveluimuri on edullisin vaihtoehto.</li>
+        </ul>
+
+        <h2>Näin kotipihapesu etenee</h2>
+        <ol>
+          <li>Lähetä viesti WhatsAppilla ({PHONE_TXT}) tai sähköpostilla. Kerro osoite, auton malli ja mielellään kuva sisätiloista.</li>
+          <li>Sovitaan aika ja paketti. Peruutus on maksuton viimeistään 48 tuntia ennen.</li>
+          <li>Pesijä tulee paikalle. Sinun ei tarvitse olla kotona, kunhan auto ja sähköpistoke ovat käytettävissä.</li>
+          <li>Tarkistat lopputuloksen ja maksat vasta sitten tilisiirrolla, käteisellä tai MobilePaylla.</li>
+        </ol>
+        <p>Katso pakettien sisällöt <a href="/hinnat-ja-palvelut/">hintasivulta</a>, lue <a href="/oppaat/auton-sisapesun-hinta-turku/">opas sisäpesun hinnasta</a> tai tarkista <a href="/alueet/">toiminta-alue</a>.</p>
+
+        <h2>Usein kysyttyä mobiilipesusta</h2>
+{art3_faq_html}
+      </div>
+    </article>
+
+{cta("Varaa sisäpesu kotipihallesi", "Lähetä viesti, niin sovitaan aika. Turku, Kaarina, Raisio, Naantali, Lieto, Rusko ja Masku.")}"""
+
 PAGES = [
     ("/", "Auton sisäpesu kotipihalla Turussa | Autokuntoon.fi",
      "Auton sisäpesu suoraan kotipihallasi Turussa ja Turun seudulla. Peruspesu 55 €, kattavapesu 80 €, Deluxe-pesu 125 €. Varaa aika WhatsAppilla.",
@@ -685,6 +771,9 @@ PAGES = [
     (ART2_PATH, "Auton sisäpesu ennen myyntiä – muistilista ja hinnat | Autokuntoon.fi",
      "Myymässä autoa? Puhdas sisätila parantaa ensivaikutelmaa ja myynti-ilmoituksen kuvia. Muistilista ennen myyntiä ja Deluxe-pesu kotipihalla Turussa 125 €.",
      article2, [article_schema(ART2_PATH, ART2_TITLE, ART2_DATE), breadcrumb_schema([("Etusivu", "/"), ("Auton sisäpesu ennen myyntiä", ART2_PATH)])]),
+    (ART3_PATH, "Mobiili auton sisäpesu Turku – pesijä kotipihalle | Autokuntoon.fi",
+     "Mobiili auton sisäpesu Turussa: pesijä tulee kotipihallesi, tarvitset vain sähköpistokkeen. Vertailu pesuhalliin, hinnat 55–125 € ja näin pesu etenee.",
+     article3, [article_schema(ART3_PATH, ART3_TITLE, ART3_DATE), breadcrumb_schema([("Etusivu", "/"), ("Mobiili auton sisäpesu Turussa", ART3_PATH)]), qa_schema(ART3_FAQ)]),
 ]
 
 # ---------- Paikkakuntasivut ----------
