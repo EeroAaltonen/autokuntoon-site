@@ -24,6 +24,7 @@
 - [Ota yhteyttä](https://www.autokuntoon.fi/ota-yhteyttae/)
 - [Opas: auton sisäpesun hinta Turussa](https://www.autokuntoon.fi/oppaat/auton-sisapesun-hinta-turku/)
 - [Opas: auton sisäpesu ennen myyntiä](https://www.autokuntoon.fi/oppaat/auton-sisapesu-ennen-myyntia/)
+- [Opas: mobiili auton sisäpesu vai pesuhalli](https://www.autokuntoon.fi/oppaat/mobiili-auton-sisapesu-turku/)
 - [Toiminta-alue](https://www.autokuntoon.fi/alueet/)
 - [Auton sisäpesu Turku](https://www.autokuntoon.fi/alueet/auton-sisapesu-turku/)
 - [Auton sisäpesu Kaarina](https://www.autokuntoon.fi/alueet/auton-sisapesu-kaarina/)
