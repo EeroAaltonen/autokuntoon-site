@@ -19,6 +19,7 @@ Sivusto on tavallista HTML:ää ja CSS:ää. Sivujen HTML tuotetaan skriptillä 
 | `images/` | Kuvat (lisätään myöhemmin) |
 | `sitemap.xml`, `robots.txt` | Hakukoneille: mitä sivuja on ja saa indeksoida |
 | `llms.txt` | Tekoälyhauille (GEO): tiivis kuvaus yrityksestä |
+| `indexnow.py` + `<avain>.txt` | IndexNow: ilmoittaa Bingille muuttuneista sivuista |
 
 Osoitteet ovat samat kuin vanhassa Webador-sivustossa, joten Googlen jo löytämät linkit toimivat jatkossakin.
 
@@ -27,6 +28,10 @@ Osoitteet ovat samat kuin vanhassa Webador-sivustossa, joten Googlen jo löytäm
 - Jokaisella sivulla on oma otsikko (`<title>`), kuvausteksti ja yksi H1-pääotsikko.
 - Etusivulla ja hintasivulla on rakenteinen data (schema.org `AutoWash`): palvelut, hinnat, alue ja yhteystiedot.
 - UKK-sivulla on `FAQPage`-rakenteinen data, josta Google ja tekoälyt voivat poimia vastauksia suoraan.
+
+## Bingille ilmoittaminen (IndexNow)
+
+ChatGPT:n haku käyttää pääosin Bingin indeksiä. Kun muutokset ovat julkaistu, aja `python3 indexnow.py`, niin Bing saa listan kaikista sivuista heti eikä vasta seuraavalla indeksointikierroksella. Juuren avaintiedosto todistaa, että ilmoitus tulee sivuston omistajalta, joten älä poista sitä.
 
 ## Esikatselu omalla koneella
 
